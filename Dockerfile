@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.13.5
 MAINTAINER chosnf
 ARG BUILD_DATE
 ARG VCS_REF
@@ -20,7 +20,7 @@ ENV API_USER=monuser \
 
 RUN echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' \
       >>/etc/apk/repositories && \
-    apk add --update nut@testing=2.7.4-r6 \
+    apk add --update nut@testing \
       libcrypto1.1 libssl1.1 net-snmp-libs
 
 EXPOSE 3493
